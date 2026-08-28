@@ -1,0 +1,347 @@
+<!--
+1. justify-content controls the alignment along the main axis, while align-items controls the alignment along the cross axis. When flex-direction is column, justify-content controls the vertical direction and align-items controls the horizontal direction.
+
+2. Card widths are created with flex-grow and flex-basis instead of width so that the cards can automatically share the available space. Unlike inline-block, Flexbox provides flexible sizing, alignment, gaps, and wrapping.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Crust</title>
+
+  <!-- Google Fonts will be added here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icon library will be added here -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="logo">
+      <span>Golden Crust</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#" class="active">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+
+  <section class="hero">
+    <span class="label">Bakery Blog</span>
+
+    <h1>Recipes, Tips &amp; Updates</h1>
+
+    <p>
+      Discover delicious recipes, useful baking tips, and the latest updates
+      from our bakery.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#" class="btn">Read Posts</a>
+      <a href="#" class="btn-outline">View Menu</a>
+    </div>
+  </section>
+
+
+
+  <!-- Features -->
+
+  <section class="features">
+
+    <div class="feature">
+        <span class="feature-icon">
+            <i class="fa-solid fa-wheat-awn"></i>
+        </span>
+
+      <h3>Natural Products</h3>
+
+      <p>
+        We use fresh and natural ingredients to create delicious
+        bakery products every day.
+      </p>
+    </div>
+
+    <div class="feature">
+        <span class="feature-icon">
+            <i class="fa-solid fa-mug-hot"></i>
+        </span>
+
+      <h3>Morning Coffee</h3>
+
+      <p>
+        Start your morning with freshly brewed coffee and warm
+        pastries from our bakery.
+      </p>
+    </div>
+
+    <div class="feature">
+        <span class="feature-icon">
+            <i class="fa-solid fa-truck"></i>
+        </span>
+
+      <h3>Fast Delivery</h3>
+
+      <p>
+        Enjoy your favorite bakery products with our quick and
+        convenient delivery service.
+      </p>
+    </div>
+
+  </section>
+
+
+
+  <!-- Blog -->
+
+  <section class="blog">
+
+    <div class="blog-head">
+      <h2>Latest from Our Blog</h2>
+
+      <p>
+        Explore our latest recipes, baking tips, and stories from
+        the Golden Crust bakery.
+      </p>
+    </div>
+
+    <div class="posts">
+
+      <article class="post">
+        <img
+          class="post-img"
+          src="https://picsum.photos/id/835/600/450"
+          alt="Fresh pastries served with coffee"
+        >
+
+        <div class="post-body">
+          <h3>5 Desserts That Pair Perfectly with Coffee</h3>
+
+          <p>
+            Discover delicious desserts that make your coffee
+            break even more enjoyable.
+          </p>
+        </div>
+
+        <div class="post-meta">
+          <div class="post-author">
+            <img
+              class="avatar"
+              src="https://picsum.photos/id/64/80/80"
+              alt="Aysel M."
+            >
+
+            <p>Aysel M.</p>
+          </div>
+
+          <div class="post-stats">
+                    <span>
+                        <i class="fa-solid fa-heart"></i>
+                        15
+                    </span>
+
+            <span>
+                        <i class="fa-solid fa-comment"></i>
+                        04
+                    </span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="post">
+        <img
+          class="post-img"
+          src="https://picsum.photos/id/431/600/450"
+          alt="Coffee being prepared in the morning"
+        >
+
+        <div class="post-body">
+          <h3>How to Make the Perfect Morning Coffee</h3>
+
+          <p>
+            Learn a simple way to prepare fresh and flavorful
+            coffee for a perfect start to your day.
+          </p>
+        </div>
+
+        <div class="post-meta">
+          <div class="post-author">
+            <img
+              class="avatar"
+              src="https://picsum.photos/id/91/80/80"
+              alt="Kamran S."
+            >
+
+            <p>Kamran S.</p>
+          </div>
+
+          <div class="post-stats">
+                    <span>
+                        <i class="fa-solid fa-heart"></i>
+                        22
+                    </span>
+
+            <span>
+                        <i class="fa-solid fa-comment"></i>
+                        07
+                    </span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="post">
+        <img
+          class="post-img"
+          src="https://picsum.photos/id/365/600/450"
+          alt="Bakery staff working in the kitchen"
+        >
+
+        <div class="post-body">
+          <h3>A Day at Our Bakery</h3>
+
+          <p>
+            Take a look behind the scenes and discover how
+            our bakery prepares fresh products every day.
+          </p>
+        </div>
+
+        <div class="post-meta">
+          <div class="post-author">
+            <img
+              class="avatar"
+              src="https://picsum.photos/id/177/80/80"
+              alt="Nermin Q."
+            >
+
+            <p>Nermin Q.</p>
+          </div>
+
+          <div class="post-stats">
+                    <span>
+                        <i class="fa-solid fa-heart"></i>
+                        31
+                    </span>
+
+            <span>
+                        <i class="fa-solid fa-comment"></i>
+                        12
+                    </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+  
+
+
+  <!-- About -->
+
+  <section class="about">
+
+    <div class="about-text">
+      <h2>A Recipe That Has Never Changed Since 2010</h2>
+
+      <p>
+        Since 2010, we have been preparing fresh bakery products
+        using traditional recipes and carefully selected ingredients.
+      </p>
+
+      <ul>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Freshly baked every morning</span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>No preservatives added</span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Flour sourced from local farmers</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-photo">
+      <img
+        class="about-img"
+        src="https://picsum.photos/id/42/600/500"
+        alt="Fresh bread in a bakery"
+      >
+    </div>
+
+  </section>
+
+
+
+  <!-- Footer -->
+  <section class="about">
+
+    <div class="about-text">
+      <h2>A Recipe That Has Never Changed Since 2010</h2>
+
+      <p>
+        Since 2010, we have been preparing fresh bakery products
+        using traditional recipes and carefully selected ingredients.
+      </p>
+
+      <ul>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Freshly baked every morning</span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>No preservatives added</span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Flour sourced from local farmers</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-photo">
+      <img
+        class="about-img"
+        src="https://picsum.photos/id/42/600/500"
+        alt="Fresh bread in a bakery"
+      >
+    </div>
+
+  </section>
+
+
+
+</div>
+
+</body>
+</html>
