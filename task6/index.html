@@ -1,0 +1,547 @@
+<!--
+1. th cədvəlin başlıq xanasıdır, td isə adi məlumat xanasıdır.
+   Cədvəlin başlıqları th, məlumat xanaları isə td ilə yazılır.
+
+2. Radio xanalarının name dəyəri eyni olmasa, onlar eyni qrup
+   sayılmayacaq və eyni anda bir neçə radio seçilə biləcək.
+-->
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gambit Cup — Turnir cədvəli</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <div class="brand">
+    <span class="logo">GAMBIT CUP</span>
+    <span class="brand-sub">Bakı 2026</span>
+  </div>
+
+  <nav class="side-nav">
+    <ul>
+      <li>
+        <a href="#cedvel" class="active">
+          <i class="bi bi-table"></i>
+          <span>Turnir cədvəli</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#oyunlar">
+          <i class="bi bi-clock"></i>
+          <span>Oyunlar</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#qeydiyyat">
+          <i class="bi bi-person"></i>
+          <span>Qeydiyyat</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#elaqe">
+          <i class="bi bi-chat"></i>
+          <span>Əlaqə</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="side-note">
+    <i class="bi bi-info-circle"></i>
+    <p>Qeydiyyat 10 mart tarixinə qədər davam edir.</p>
+  </div>
+
+</aside>
+
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+
+    <div class="topbar-text">
+      <h1>Turnir cədvəli və qeydiyyat</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+
+    <span class="status">
+                <i class="bi bi-check-circle"></i>
+                Qeydiyyat açıqdır
+            </span>
+
+  </header>
+
+
+  <!-- TURNİR CƏDVƏLİ -->
+  <section id="cedvel">
+
+    <h2>Turnir cədvəli</h2>
+
+    <div class="panel">
+
+      <table>
+
+        <caption>
+          II Gambit Cup, klassik — 9 tur
+        </caption>
+
+        <thead>
+        <tr>
+          <th>Yer</th>
+          <th>İştirakçı</th>
+          <th>Ölkə</th>
+          <th class="number">Oyun</th>
+          <th class="number">Xal</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+          <td>1</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/1005/80/80"
+                   alt="Nurlan T.">
+              <span>Nurlan T.</span>
+            </div>
+          </td>
+          <td>AZE</td>
+          <td class="number">9</td>
+          <td class="number">7.5</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/1011/80/80"
+                   alt="Emre Y.">
+              <span>Emre Y.</span>
+            </div>
+          </td>
+          <td>TUR</td>
+          <td class="number">9</td>
+          <td class="number">7.0</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/1012/80/80"
+                   alt="Giorgi K.">
+              <span>Giorgi K.</span>
+            </div>
+          </td>
+          <td>GEO</td>
+          <td class="number">9</td>
+          <td class="number">6.5</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/1027/80/80"
+                   alt="Pablo R.">
+              <span>Pablo R.</span>
+            </div>
+          </td>
+          <td>ESP</td>
+          <td class="number">9</td>
+          <td class="number">6.0</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/1074/80/80"
+                   alt="Marek W.">
+              <span>Marek W.</span>
+            </div>
+          </td>
+          <td>POL</td>
+          <td class="number">9</td>
+          <td class="number">5.5</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td>
+            <div class="participant">
+              <img class="avatar"
+                   src="https://picsum.photos/id/823/80/80"
+                   alt="Nikola J.">
+              <span>Nikola J.</span>
+            </div>
+          </td>
+          <td>SRB</td>
+          <td class="number">9</td>
+          <td class="number">5.0</td>
+        </tr>
+
+        </tbody>
+
+        <tfoot>
+        <tr>
+          <td colspan="4">Cəmi</td>
+          <td class="number">37.5</td>
+        </tr>
+        </tfoot>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- OYUN CƏDVƏLİ -->
+  <section id="oyunlar">
+
+    <h2>Növbəti turlar</h2>
+
+    <div class="panel">
+
+      <table>
+
+        <caption>
+          8 və 9-cu turun proqramı
+        </caption>
+
+        <thead>
+        <tr>
+          <th>Tur</th>
+          <th>Tarix</th>
+          <th>Ağ</th>
+          <th>Qara</th>
+          <th class="number">Saat</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+          <td rowspan="2">Tur 8</td>
+          <td rowspan="2">12 mart</td>
+          <td>Nurlan T.</td>
+          <td>Emre Y.</td>
+          <td class="number">15:00</td>
+        </tr>
+
+        <tr>
+          <td>Giorgi K.</td>
+          <td>Pablo R.</td>
+          <td class="number">15:00</td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">Tur 9</td>
+          <td rowspan="2">13 mart</td>
+          <td>Marek W.</td>
+          <td>Nikola J.</td>
+          <td class="number">11:00</td>
+        </tr>
+
+        <tr>
+          <td>Emre Y.</td>
+          <td>Giorgi K.</td>
+          <td class="number">11:00</td>
+        </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- QEYDİYYAT -->
+  <section id="qeydiyyat">
+
+    <h2>Qeydiyyat formu</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+
+    <div class="panel">
+
+      <form class="reg-form">
+
+        <!-- 1-ci cüt -->
+        <div class="row">
+
+          <div class="field">
+            <label for="name">Ad</label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Adınız"
+              required
+              autofocus
+            >
+          </div>
+
+          <div class="field">
+            <label for="surname">Soyad</label>
+
+            <input
+              type="text"
+              id="surname"
+              placeholder="Soyadınız"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <!-- 2-ci cüt -->
+        <div class="row">
+
+          <div class="field">
+            <label for="email">E-mail</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="ad@mail.com"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="password">Şifrə</label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Ən azı 8 simvol"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <!-- 3-cü cüt -->
+        <div class="row">
+
+          <div class="field">
+            <label for="birth">Doğum tarixi</label>
+
+            <input
+              type="date"
+              id="birth"
+            >
+          </div>
+
+          <div class="field">
+            <label for="rating">FIDE reytinqi</label>
+
+            <input
+              type="number"
+              id="rating"
+              min="0"
+              max="3000"
+            >
+          </div>
+
+        </div>
+
+
+        <!-- 4-cü cüt -->
+        <div class="row">
+
+          <div class="field">
+            <label for="category">Kateqoriya</label>
+
+            <select id="category">
+
+              <option value="">
+                Kateqoriya seçin
+              </option>
+
+              <option value="u14">U14</option>
+              <option value="u18">U18</option>
+              <option value="adult">Böyüklər</option>
+              <option value="veteran">Veteranlar (50+)</option>
+
+            </select>
+          </div>
+
+
+          <div class="field">
+
+            <label for="city">Şəhər</label>
+
+            <select id="city">
+
+              <option value="">
+                Şəhər seçin
+              </option>
+
+              <option value="baku">Bakı</option>
+              <option value="ganja">Gəncə</option>
+              <option value="sumgayit">Sumqayıt</option>
+              <option value="sheki">Şəki</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- RADIO -->
+        <fieldset>
+
+          <legend>İştirak forması</legend>
+
+          <div class="radio-group">
+
+            <label>
+              <input
+                type="radio"
+                name="format"
+                id="classic"
+                value="classic"
+                checked
+              >
+              Klassik
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="format"
+                id="rapid"
+                value="rapid"
+              >
+              Rapid
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="format"
+                id="blitz"
+                value="blitz"
+              >
+              Blits
+            </label>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- CHECKBOX -->
+        <div class="checkbox-field">
+
+          <input
+            type="checkbox"
+            id="rules"
+            required
+          >
+
+          <label for="rules">
+            Turnirin qaydaları ilə tanış oldum
+          </label>
+
+        </div>
+
+
+        <!-- TEXTAREA -->
+        <div class="textarea-field">
+
+          <label for="note">
+            Əlavə qeyd
+          </label>
+
+          <textarea
+            id="note"
+            rows="5"
+            placeholder="İştirakla bağlı əlavə məlumat"
+          ></textarea>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <button type="submit">
+          Qeydiyyatdan keç
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="elaqe">
+
+    <p>© 2026 John Doe</p>
+
+    <div class="footer-links">
+
+      <a
+        href="https://picsum.photos/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Şəkillərin mənbəyi
+      </a>
+
+      <a href="mailto:info@gambitcup.az">
+        info@gambitcup.az
+      </a>
+
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
+
