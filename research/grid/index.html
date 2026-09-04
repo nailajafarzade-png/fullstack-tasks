@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Saytın telefonda da düzgün ölçülənməsi üçün -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grid Dashboard</title>
+
+  <!-- CSS faylını HTML-ə qoşuruq -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!--
+    Bütün səhifəni əhatə edən əsas container.
+    CSS-də bunun üzərində əsas Grid-i quracağıq.
+-->
+<div class="dashboard">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <h1>Admin Dashboard</h1>
+
+    <!--
+        Header-in içindəki Home, Profile, Settings
+        elementlərini yan-yana düzmək üçün Flex istifadə edəcəyik.
+    -->
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Settings</a>
+    </nav>
+
+  </header>
+
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <h2>Menu</h2>
+
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Users</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Orders</a></li>
+      <li><a href="#">Reports</a></li>
+    </ul>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!--
+        Kartların yerləşdiyi ayrıca Grid container.
+        Burada repeat(), minmax() və auto-fit istifadə edəcəyik.
+    -->
+    <section class="cards">
+
+      <article class="card card-large">
+        <span class="icon">📊</span>
+        <h3>Total Sales</h3>
+        <p>$24,580</p>
+        <small>+12% this month</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">👥</span>
+        <h3>Users</h3>
+        <p>1,248</p>
+        <small>+8% this month</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">📦</span>
+        <h3>Orders</h3>
+        <p>356</p>
+        <small>+5% this month</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">🛍️</span>
+        <h3>Products</h3>
+        <p>842</p>
+        <small>24 new products</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">⭐</span>
+        <h3>Reviews</h3>
+        <p>4.8 / 5</p>
+        <small>1,542 reviews</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">💰</span>
+        <h3>Revenue</h3>
+        <p>$18,420</p>
+        <small>+15% this month</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">📈</span>
+        <h3>Growth</h3>
+        <p>18.5%</p>
+        <small>Compared to last month</small>
+      </article>
+
+    </section>
+
+
+    <!-- RECENT ACTIVITY -->
+    <section class="recent">
+
+      <h2>Recent Activity</h2>
+
+      <div class="activity">
+        <p>New user registered</p>
+        <span>2 min ago</span>
+      </div>
+
+      <div class="activity">
+        <p>New order received</p>
+        <span>15 min ago</span>
+      </div>
+
+      <div class="activity">
+        <p>Product was updated</p>
+        <span>1 hour ago</span>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Admin Dashboard</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

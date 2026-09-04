@@ -1,0 +1,551 @@
+/*
+    * bütün HTML elementlərini seçir.
+
+    box-sizing: border-box:
+    width və height hesablanarkən padding və border-i
+    həmin ölçünün içərisinə daxil edir.
+
+    margin və padding-i sıfırlayırıq ki,
+    browser-in default boşluqları layout-a mane olmasın.
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+    Bütün səhifənin ümumi görünüşü.
+*/
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+
+/* =====================================================
+   ƏSAS GRID
+   ===================================================== */
+
+.dashboard {
+
+  /*
+      Ən vacib hissə:
+
+      display: grid;
+
+      .dashboard elementini Grid container edirik.
+      İçindəki header, sidebar, main və footer
+      artıq Grid elementlərinə çevrilir.
+  */
+  display: grid;
+
+
+  /*
+      2 sütun yaradırıq:
+
+      240px → sidebar üçün sabit genişlik
+      1fr   → qalan bütün boş sahə
+
+      FR = fraction (pay)
+
+      Məsələn ekran 1200px-dirsə:
+      sidebar → 240px
+      main    → qalan sahə
+  */
+  grid-template-columns: 240px 1fr;
+
+
+  /*
+      3 sətir yaradırıq:
+
+      auto → header-in öz ölçüsü
+      1fr  → main üçün qalan sahə
+      auto → footer-in öz ölçüsü
+  */
+  grid-template-rows: auto 1fr auto;
+
+
+  /*
+      Grid-in hissələrinə ad veririk.
+
+      Bu adlar aşağıda elementlərə
+      grid-area ilə veriləcək.
+  */
+  grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+
+  /*
+      Grid elementləri arasında
+      həm horizontal, həm vertical
+      16px məsafə yaradır.
+  */
+  gap: 16px;
+
+
+  /*
+      Dashboard-un ən azı ekranın hündürlüyü qədər
+      olmasını təmin edir.
+  */
+  min-height: 100vh;
+
+
+  /*
+      Səhifənin kənarlarında boşluq yaradır.
+  */
+  padding: 16px;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+
+  /*
+      Header-i yuxarıdakı
+      "header" sahəsinə yerləşdiririk.
+  */
+  grid-area: header;
+
+
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+
+
+  /*
+      BURADA GRID YOX, FLEX istifadə edirik.
+
+      Header-in içində:
+      Admin Dashboard       Home Profile Settings
+
+      kimi bir xətt üzrə düzülüş istəyirik.
+
+      Bu 1 ölçülü layout-dur,
+      ona görə Flex uyğundur.
+  */
+  display: flex;
+
+
+  /*
+      Elementləri horizontal istiqamətdə
+      biri sola, biri sağa yerləşdirir.
+  */
+  justify-content: space-between;
+
+
+  /*
+      Elementləri vertical olaraq
+      ortalayır.
+  */
+  align-items: center;
+}
+
+
+.header h1 {
+  font-size: 26px;
+}
+
+
+/* Header-dəki linklər */
+
+.navigation {
+
+  /*
+      Home, Profile, Settings elementlərini
+      yan-yana düzmək üçün Flex.
+  */
+  display: flex;
+
+
+  /*
+      Linklər arasında 20px məsafə.
+  */
+  gap: 20px;
+}
+
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.sidebar {
+
+  /*
+      Sidebar-ı grid-template-areas-də
+      yaratdığımız "sidebar" sahəsinə yerləşdiririk.
+  */
+  grid-area: sidebar;
+
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+
+/*
+    Sidebar menyusundakı elementləri
+    alt-alta düzmək istəyirik.
+
+    Buna görə Flex istifadə edirik.
+*/
+.sidebar ul {
+  list-style: none;
+
+  display: flex;
+
+  /*
+      Flex elementləri column istiqamətində
+      düzür.
+
+      Yəni:
+      Dashboard
+      Users
+      Products
+      Orders
+      Reports
+  */
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.main {
+
+  /*
+      Main-i "main" adlı grid sahəsinə yerləşdiririk.
+  */
+  grid-area: main;
+
+
+  /*
+      Main-in içində iki əsas hissə var:
+
+      1. cards
+      2. recent
+
+      Bunları alt-alta yerləşdirmək üçün
+      Flex column istifadə edirik.
+  */
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.cards {
+
+  /*
+      Kartların yerləşdiyi hissəni
+      ayrıca Grid container edirik.
+  */
+  display: grid;
+
+
+  /*
+      BURADA BİRDƏN ÇOX GRID MÖVZUSU VAR!
+
+      repeat()
+      auto-fit
+      minmax()
+      1fr
+
+      hamısını birlikdə istifadə edirik.
+  */
+  grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+
+  /*
+      Kartlar arasında 16px məsafə.
+  */
+  gap: 16px;
+}
+
+
+/*
+    minmax(200px, 1fr)
+
+    200px → kartın minimum ölçüsü
+
+    1fr → imkan olduqda qalan boş sahəni istifadə etsin.
+
+    auto-fit:
+
+    Ekranın ölçüsünə görə mümkün qədər uyğun
+    sayda sütun yaratmağa çalışır.
+
+    Məsələn böyük ekranda:
+
+    ┌────┐ ┌────┐ ┌────┐ ┌────┐
+    │    │ │    │ │    │ │    │
+    └────┘ └────┘ └────┘ └────┘
+
+    Ekran daralanda:
+
+    ┌────┐ ┌────┐
+    │    │ │    │
+    └────┘ └────┘
+
+    Daha da daralanda:
+
+    ┌────────┐
+    │        │
+    └────────┘
+*/
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.card {
+  background: white;
+
+  padding: 24px;
+
+  min-height: 160px;
+
+  border-radius: 12px;
+
+
+  /*
+      Kartın daxilindəki:
+
+      icon
+      title
+      qiymət
+      description
+
+      elementlərini column şəklində düzürük.
+  */
+  display: flex;
+  flex-direction: column;
+
+
+  /*
+      Kartın daxilindəki elementləri
+      yuxarı və aşağı istiqamətdə paylaşdırır.
+  */
+  justify-content: space-between;
+}
+
+
+/*
+    grid-column: span 2
+
+    Bu xüsusilə vacibdir!
+
+    Birinci kart normalda 1 sütun tutmalı idi.
+
+    Amma span 2 deyərək ona
+    2 sütunluq yer veririk.
+
+    Yəni:
+
+    ┌───────────────────┬─────────┐
+    │                   │         │
+    │      CARD 1       │ CARD 2  │
+    │     2 sütun       │         │
+    │                   │         │
+    └───────────────────┴─────────┘
+*/
+.card-large {
+  grid-column: span 2;
+}
+
+
+.card .icon {
+  font-size: 30px;
+}
+
+
+.card h3 {
+  font-size: 18px;
+}
+
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.card small {
+  color: #777;
+}
+
+
+/* =====================================================
+   RECENT ACTIVITY
+   ===================================================== */
+
+.recent {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+
+.recent h2 {
+  margin-bottom: 20px;
+}
+
+
+/*
+    Recent Activity daxilində:
+
+    New user registered     2 min ago
+
+    kimi bir düzülüş istəyirik.
+
+    Ona görə Flex istifadə edirik.
+*/
+.activity {
+
+  display: flex;
+
+  /*
+      Birinci element sola,
+      ikinci element sağa.
+  */
+  justify-content: space-between;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+.activity span {
+  color: #777;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+
+  /*
+      Footer-i "footer" adlı sahəyə yerləşdiririk.
+  */
+  grid-area: footer;
+
+  background: white;
+  padding: 18px;
+
+  /*
+      Footer daxilindəki yazını ortalayırıq.
+  */
+  text-align: center;
+
+  border-radius: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+/*
+    Ekran 700px-dən kiçik olduqda
+    bu qaydalar işləyəcək.
+
+    Burada media query istifadə edirik.
+*/
+@media (max-width: 700px) {
+
+  .dashboard {
+
+    /*
+        Əvvəl:
+
+        240px | 1fr
+
+        idi.
+
+        İndi yalnız 1 sütun istəyirik.
+    */
+    grid-template-columns: 1fr;
+
+
+    /*
+        Desktop:
+
+        header | header
+        sidebar | main
+        footer | footer
+
+        Mobile:
+
+        header
+        sidebar
+        main
+        footer
+    */
+    grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+  }
+
+
+  /*
+      Desktop-da birinci kart 2 sütun tuturdu.
+
+      Amma mobile-da yalnız 1 sütun var.
+
+      Ona görə yenidən 1 sütuna qaytarırıq.
+  */
+  .card-large {
+    grid-column: span 1;
+  }
+
+
+  /*
+      Header-dəki elementləri mobile-da
+      alt-alta yerləşdiririk.
+  */
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+}
