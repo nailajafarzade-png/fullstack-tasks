@@ -1,35 +1,39 @@
 <!--
-1. th cədvəlin başlıq xanasıdır, td isə adi məlumat xanasıdır.
-   Cədvəlin başlıqları th, məlumat xanaları isə td ilə yazılır.
+1. th ilə td arasındakı fərq:
+th cədvəldə başlıq xanasıdır və sütun və ya sətirin başlığını göstərir.
+td isə cədvəldə adi məlumat xanasıdır.
 
-2. Radio xanalarının name dəyəri eyni olmasa, onlar eyni qrup
-   sayılmayacaq və eyni anda bir neçə radio seçilə biləcək.
+2. Üç radio xanasının name dəyəri eyni verilməsə:
+Radio xanaları bir qrup kimi işləməz və istifadəçi eyni anda bir neçə radio seçə bilər.
 -->
 
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gambit Cup — Turnir cədvəli</title>
+  <title>Gambit Cup</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- ================= SIDEBAR ================= -->
+
 <aside class="sidebar">
 
   <div class="brand">
@@ -39,33 +43,35 @@
 
   <nav class="side-nav">
     <ul>
+
       <li>
         <a href="#cedvel" class="active">
-          <i class="bi bi-table"></i>
-          <span>Turnir cədvəli</span>
+          <i class="bi bi-trophy"></i>
+          Turnir cədvəli
         </a>
       </li>
 
       <li>
         <a href="#oyunlar">
           <i class="bi bi-clock"></i>
-          <span>Oyunlar</span>
+          Oyunlar
         </a>
       </li>
 
       <li>
         <a href="#qeydiyyat">
           <i class="bi bi-person"></i>
-          <span>Qeydiyyat</span>
+          Qeydiyyat
         </a>
       </li>
 
       <li>
         <a href="#elaqe">
           <i class="bi bi-chat"></i>
-          <span>Əlaqə</span>
+          Əlaqə
         </a>
       </li>
+
     </ul>
   </nav>
 
@@ -77,28 +83,36 @@
 </aside>
 
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
+
 <div class="content">
 
-  <!-- TOPBAR -->
+  <!-- ================= TOPBAR ================= -->
+
   <header class="topbar">
 
     <div class="topbar-text">
+
       <h1>Turnir cədvəli və qeydiyyat</h1>
+
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Amet assumenda atque consectetur cupiditate deleniti eius
+        fuga illum incidunt laborum laudantium molestiae.
       </p>
+
     </div>
 
     <span class="status">
-                <i class="bi bi-check-circle"></i>
-                Qeydiyyat açıqdır
-            </span>
+      <i class="bi bi-check-circle"></i>
+      Qeydiyyat açıqdır
+    </span>
 
   </header>
 
 
-  <!-- TURNİR CƏDVƏLİ -->
+  <!-- ================= TURNİR CƏDVƏLİ ================= -->
+
   <section id="cedvel">
 
     <h2>Turnir cədvəli</h2>
@@ -116,98 +130,133 @@
           <th>Yer</th>
           <th>İştirakçı</th>
           <th>Ölkə</th>
-          <th class="number">Oyun</th>
-          <th class="number">Xal</th>
+          <th>Oyun</th>
+          <th>Xal</th>
         </tr>
         </thead>
 
         <tbody>
 
+        <!-- 1-ci iştirakçı -->
         <tr>
           <td>1</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/1005/80/80"
-                   alt="Nurlan T.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/1005/80/80"
+                alt="Nurlan T."
+              >
               <span>Nurlan T.</span>
             </div>
           </td>
+
           <td>AZE</td>
           <td class="number">9</td>
           <td class="number">7.5</td>
         </tr>
 
+
+        <!-- 2-ci iştirakçı -->
         <tr>
           <td>2</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/1011/80/80"
-                   alt="Emre Y.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/1011/80/80"
+                alt="Emre Y."
+              >
               <span>Emre Y.</span>
             </div>
           </td>
+
           <td>TUR</td>
           <td class="number">9</td>
           <td class="number">7.0</td>
         </tr>
 
+
+        <!-- 3-cü iştirakçı -->
         <tr>
           <td>3</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/1012/80/80"
-                   alt="Giorgi K.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/1012/80/80"
+                alt="Giorgi K."
+              >
               <span>Giorgi K.</span>
             </div>
           </td>
+
           <td>GEO</td>
           <td class="number">9</td>
           <td class="number">6.5</td>
         </tr>
 
+
+        <!-- 4-cü iştirakçı -->
         <tr>
           <td>4</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/1027/80/80"
-                   alt="Pablo R.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/1027/80/80"
+                alt="Pablo R."
+              >
               <span>Pablo R.</span>
             </div>
           </td>
+
           <td>ESP</td>
           <td class="number">9</td>
           <td class="number">6.0</td>
         </tr>
 
+
+        <!-- 5-ci iştirakçı -->
         <tr>
           <td>5</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/1074/80/80"
-                   alt="Marek W.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/1074/80/80"
+                alt="Marek W."
+              >
               <span>Marek W.</span>
             </div>
           </td>
+
           <td>POL</td>
           <td class="number">9</td>
           <td class="number">5.5</td>
         </tr>
 
+
+        <!-- 6-cı iştirakçı -->
         <tr>
           <td>6</td>
+
           <td>
             <div class="participant">
-              <img class="avatar"
-                   src="https://picsum.photos/id/823/80/80"
-                   alt="Nikola J.">
+              <img
+                class="avatar"
+                src="https://picsum.photos/id/823/80/80"
+                alt="Nikola J."
+              >
               <span>Nikola J.</span>
             </div>
           </td>
+
           <td>SRB</td>
           <td class="number">9</td>
           <td class="number">5.0</td>
@@ -229,7 +278,8 @@
   </section>
 
 
-  <!-- OYUN CƏDVƏLİ -->
+  <!-- ================= OYUNLAR ================= -->
+
   <section id="oyunlar">
 
     <h2>Növbəti turlar</h2>
@@ -248,14 +298,14 @@
           <th>Tarix</th>
           <th>Ağ</th>
           <th>Qara</th>
-          <th class="number">Saat</th>
+          <th>Saat</th>
         </tr>
         </thead>
 
         <tbody>
 
         <tr>
-          <td rowspan="2">Tur 8</td>
+          <td rowspan="2">8</td>
           <td rowspan="2">12 mart</td>
           <td>Nurlan T.</td>
           <td>Emre Y.</td>
@@ -269,7 +319,7 @@
         </tr>
 
         <tr>
-          <td rowspan="2">Tur 9</td>
+          <td rowspan="2">9</td>
           <td rowspan="2">13 mart</td>
           <td>Marek W.</td>
           <td>Nikola J.</td>
@@ -291,20 +341,24 @@
   </section>
 
 
-  <!-- QEYDİYYAT -->
+  <!-- ================= QEYDİYYAT ================= -->
+
   <section id="qeydiyyat">
 
     <h2>Qeydiyyat formu</h2>
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Corporis delectus minus neque? A deserunt ducimus illum
+      molestias nam, saepe unde voluptate.
     </p>
 
     <div class="panel">
 
       <form class="reg-form">
 
-        <!-- 1-ci cüt -->
+        <!-- 1-ci ROW -->
+
         <div class="row">
 
           <div class="field">
@@ -333,7 +387,8 @@
         </div>
 
 
-        <!-- 2-ci cüt -->
+        <!-- 2-ci ROW -->
+
         <div class="row">
 
           <div class="field">
@@ -354,6 +409,7 @@
               type="password"
               id="password"
               placeholder="Ən azı 8 simvol"
+              minlength="8"
               required
             >
           </div>
@@ -361,15 +417,16 @@
         </div>
 
 
-        <!-- 3-cü cüt -->
+        <!-- 3-cü ROW -->
+
         <div class="row">
 
           <div class="field">
-            <label for="birth">Doğum tarixi</label>
+            <label for="birthdate">Doğum tarixi</label>
 
             <input
               type="date"
-              id="birth"
+              id="birthdate"
             >
           </div>
 
@@ -387,86 +444,75 @@
         </div>
 
 
-        <!-- 4-cü cüt -->
+        <!-- 4-cü ROW -->
+
         <div class="row">
 
           <div class="field">
             <label for="category">Kateqoriya</label>
 
             <select id="category">
-
-              <option value="">
-                Kateqoriya seçin
-              </option>
-
-              <option value="u14">U14</option>
-              <option value="u18">U18</option>
-              <option value="adult">Böyüklər</option>
-              <option value="veteran">Veteranlar (50+)</option>
-
+              <option>Kateqoriya seçin</option>
+              <option>U14</option>
+              <option>U18</option>
+              <option>Böyüklər</option>
+              <option>Veteranlar (50+)</option>
             </select>
           </div>
 
-
           <div class="field">
-
             <label for="city">Şəhər</label>
 
             <select id="city">
-
-              <option value="">
-                Şəhər seçin
-              </option>
-
-              <option value="baku">Bakı</option>
-              <option value="ganja">Gəncə</option>
-              <option value="sumgayit">Sumqayıt</option>
-              <option value="sheki">Şəki</option>
-
+              <option>Şəhər seçin</option>
+              <option>Bakı</option>
+              <option>Gəncə</option>
+              <option>Sumqayıt</option>
+              <option>Şəki</option>
             </select>
-
           </div>
 
         </div>
 
 
-        <!-- RADIO -->
+        <!-- RADIO GROUP -->
+
         <fieldset>
 
           <legend>İştirak forması</legend>
 
           <div class="radio-group">
 
-            <label>
+            <div class="radio-item">
               <input
                 type="radio"
-                name="format"
                 id="classic"
+                name="format"
                 value="classic"
                 checked
               >
-              Klassik
-            </label>
+              <label for="classic">Klassik</label>
+            </div>
 
-            <label>
+            <div class="radio-item">
               <input
                 type="radio"
-                name="format"
                 id="rapid"
+                name="format"
                 value="rapid"
               >
-              Rapid
-            </label>
+              <label for="rapid">Rapid</label>
+            </div>
 
-            <label>
+            <div class="radio-item">
               <input
                 type="radio"
-                name="format"
                 id="blitz"
+                name="format"
                 value="blitz"
               >
-              Blits
-            </label>
+              <label for="blitz">Blits</label>
+            </div>
 
           </div>
 
@@ -474,6 +520,7 @@
 
 
         <!-- CHECKBOX -->
+
         <div class="checkbox-field">
 
           <input
@@ -490,11 +537,10 @@
 
 
         <!-- TEXTAREA -->
-        <div class="textarea-field">
 
-          <label for="note">
-            Əlavə qeyd
-          </label>
+        <div class="field">
+
+          <label for="note">Əlavə qeyd</label>
 
           <textarea
             id="note"
@@ -506,6 +552,7 @@
 
 
         <!-- BUTTON -->
+
         <button type="submit">
           Qeydiyyatdan keç
         </button>
@@ -517,17 +564,17 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
+
   <footer id="elaqe">
 
     <p>© 2026 John Doe</p>
 
-    <div class="footer-links">
+    <div>
 
       <a
         href="https://picsum.photos/"
         target="_blank"
-        rel="noopener noreferrer"
       >
         Şəkillərin mənbəyi
       </a>
@@ -543,5 +590,5 @@
 </div>
 
 </body>
-</html>
 
+</html>
