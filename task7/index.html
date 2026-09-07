@@ -1,0 +1,466 @@
+<!--
+1. th və td arasındakı fərq:
+th cədvəldə başlıq xanasını, td isə adi məlumat xanasını göstərir.
+
+2. Üç radio xanasının name dəyəri eyni verilməsə:
+Radio düymələri eyni qrupda hesab olunmaz və eyni anda bir neçə radio
+düyməsini seçmək mümkün olar.
+-->
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MERİDİAN - Gündəlik Xəbər Qəzeti</title>
+
+  <!-- CSS ayrıca fayldan qoşulur -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<!--
+    paper səhifənin əsas Grid konteyneridir.
+    Səhifənin bütün bölmələri bunun birbaşa övladlarıdır.
+-->
+<div class="paper">
+
+  <!-- ==================== 1. MASTHEAD ==================== -->
+
+  <header class="masthead">
+
+    <!-- Sol sütun -->
+    <p class="date">
+      12 mart 2026, cümə axşamı
+    </p>
+
+    <!-- Orta sütun -->
+    <div class="title-box">
+
+      <h1 class="logo">
+        MERİDİAN
+      </h1>
+
+      <p class="tagline">
+        Gündəlik xəbər qəzeti
+      </p>
+
+    </div>
+
+    <!-- Sağ sütun -->
+    <p class="issue">
+      Buraxılış № 212
+    </p>
+
+  </header>
+
+
+  <!-- ==================== 2. RUBRİKA SƏTRİ ==================== -->
+
+  <nav class="rubrics">
+
+    <ul>
+
+      <li>
+        <a href="#esas">
+          Əsas xəbər
+        </a>
+      </li>
+
+      <li>
+        <a href="#lenta">
+          Xəbər lenti
+        </a>
+      </li>
+
+      <li>
+        <a href="#oxunan">
+          Ən çox oxunan
+        </a>
+      </li>
+
+      <li>
+        <a href="#valyuta">
+          Valyuta
+        </a>
+      </li>
+
+      <li>
+        <a href="#elaqe">
+          Əlaqə
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ==================== 3. ƏSAS XƏBƏR ==================== -->
+
+  <section id="esas" class="lead">
+
+            <span class="tag">
+                Əsas xəbər
+            </span>
+
+    <h2>
+      Şəhər kitabxanası 90 illik arxivini rəqəmsallaşdırır
+    </h2>
+
+    <p class="meta">
+      Redaksiya · 12 mart 2026
+    </p>
+
+    <img
+      class="lead-photo"
+      src="https://picsum.photos/id/24/900/440"
+      alt="Açıq kitab"
+    >
+
+    <!--
+        Bu blokdakı 3 paraqraf sonradan CSS ilə
+        iki sütuna bölünəcək.
+        Paraqrafları ayrıca iki div-ə bölmürük.
+    -->
+    <div class="lead-body">
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Fugit eius quibusdam consequatur non corporis, ratione quas
+        aperiam veniam dolorum recusandae, quis nostrum
+        exercitationem ullam corporis suscipit laboriosam.
+      </p>
+
+      <p>
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+        odit aut fugit, sed quia consequuntur magni dolores eos qui
+        ratione voluptatem sequi nesciunt neque porro quisquam est.
+      </p>
+
+      <p>
+        Ut enim ad minima veniam, quis nostrum exercitationem ullam
+        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+        consequatur quis autem vel eum iure reprehenderit.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== 4. YAN SÜTUN ==================== -->
+
+  <aside class="rail">
+
+
+    <!-- ===== ƏN ÇOX OXUNANLAR ===== -->
+
+    <div id="oxunan" class="box">
+
+      <h3>
+        Ən çox oxunanlar
+      </h3>
+
+      <ol class="top-list">
+
+        <li>
+          <a href="#lenta">
+            Universitetlərə qəbul üzrə yeni qaydalar bu həftə açıqlanacaq
+          </a>
+        </li>
+
+        <li>
+          <a href="#lenta">
+            Şəhərin mərkəzində velosiped yolları genişləndirilir
+          </a>
+        </li>
+
+        <li>
+          <a href="#lenta">
+            Milli muzeyin gecə seansları may ayına qədər davam edir
+          </a>
+        </li>
+
+        <li>
+          <a href="#lenta">
+            Yeni körpünün açılışı üçün tarix müəyyənləşdi
+          </a>
+        </li>
+
+        <li>
+          <a href="#lenta">
+            Payız mövsümündə sərgi proqramı elan olundu
+          </a>
+        </li>
+
+      </ol>
+
+    </div>
+
+
+    <!-- ===== REDAKTORUN SEÇİMİ ===== -->
+
+    <div class="box">
+
+      <h3>
+        Redaktorun seçimi
+      </h3>
+
+      <img
+        class="pick-photo"
+        src="https://picsum.photos/id/870/560/320"
+        alt="Mayak"
+      >
+
+      <h4>
+        Mayakın 100 illik fənəri necə bərpa olundu
+      </h4>
+
+      <p class="meta">
+        Redaksiya · 10 mart 2026
+      </p>
+
+    </div>
+
+
+    <!-- ===== VALYUTA ===== -->
+
+    <div id="valyuta" class="box">
+
+      <h3>
+        Valyuta
+      </h3>
+
+      <!--
+          Burada hər valyuta üçün ayrıca div yoxdur.
+          Cəmi 6 span var və CSS Grid onları
+          ardıcıl şəkildə xanalara yerləşdirəcək.
+      -->
+      <div class="rates">
+
+                    <span>
+                        USD
+                    </span>
+
+        <span>
+                        1.70 ▲
+                    </span>
+
+        <span>
+                        EUR
+                    </span>
+
+        <span class="highlight-rate">
+                        1.85 ▼
+                    </span>
+
+        <span>
+                        TRY
+                    </span>
+
+        <span>
+                        0.05 ▲
+                    </span>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ==================== 5. XƏBƏR LENTİ ==================== -->
+
+  <section id="lenta" class="wall">
+
+    <h2>
+      Xəbər lenti
+    </h2>
+
+    <div class="wall-grid">
+
+
+      <!-- ===== 1-Cİ KART ===== -->
+
+      <article class="card card-tall">
+
+        <img
+          src="https://picsum.photos/id/348/600/360"
+          alt="Metro stansiyası"
+        >
+
+        <span class="tag">
+                        Şəhər
+                    </span>
+
+        <h3>
+          Metronun yeni xətti üzrə sınaq gedişləri başlayıb
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Quas aperiam veniam dolorum recusandae, quis nostrum
+          exercitationem.
+        </p>
+
+        <p class="meta">
+          12 mart 2026
+        </p>
+
+      </article>
+
+
+      <!-- ===== 2-Cİ KART ===== -->
+
+      <article class="card">
+
+                    <span class="tag">
+                        Elm
+                    </span>
+
+        <h3>
+          Universitet laboratoriyası yeni cihazlarla təchiz olunub
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <p class="meta">
+          12 mart 2026
+        </p>
+
+      </article>
+
+
+      <!-- ===== 3-CÜ KART ===== -->
+
+      <article class="card">
+
+                    <span class="tag">
+                        Mədəniyyət
+                    </span>
+
+        <h3>
+          Şəhər teatrı yeni mövsümü aprelin əvvəlində açır
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <p class="meta">
+          11 mart 2026
+        </p>
+
+      </article>
+
+
+      <!-- ===== 4-CÜ KART ===== -->
+
+      <article class="card">
+
+                    <span class="tag">
+                        İqtisadiyyat
+                    </span>
+
+        <h3>
+          Taxıl ixracı üzrə rüblük hesabat açıqlanıb
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <p class="meta">
+          11 mart 2026
+        </p>
+
+      </article>
+
+
+      <!-- ===== 5-Cİ KART ===== -->
+
+      <article class="card">
+
+                    <span class="tag">
+                        İdman
+                    </span>
+
+        <h3>
+          Gənclər çempionatının qrup mərhələsi yekunlaşdı
+        </h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <p class="meta">
+          10 mart 2026
+        </p>
+
+      </article>
+
+
+      <!-- ===== ELAN ZOLAĞI ===== -->
+
+      <div class="strip">
+
+                    <span class="strip-label">
+                        Redaksiyadan
+                    </span>
+
+        <p>
+          Sabahdan qəzetin bütün arxivi saytda açıq olacaq.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== 6. FOOTER ==================== -->
+
+  <footer id="elaqe">
+
+    <p>
+      © 2026 John Doe
+    </p>
+
+    <div class="footer-links">
+
+      <a
+        href="https://picsum.photos/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Şəkillərin mənbəyi
+      </a>
+
+      <a href="mailto:info@meridian.az">
+        info@meridian.az
+      </a>
+
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
+
