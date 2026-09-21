@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dentist Landing Page</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#0d9488',
+              dark: '#0f766e',
+            }
+          },
+          maxWidth: {
+            container: '1200px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Kiçik custom stillər yalnız checkbox menu animasiyası üçün (Tailwind-də çətin olan hissə) -->
+  <style>
+    /* Checkbox menu soft transition */
+    .nav-menu {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    #nav-toggle:checked ~ .nav-menu {
+      max-height: 420px;
+      opacity: 1;
+      padding-top: 1.25rem;
+      padding-bottom: 1.5rem;
+    }
+    /* Hamburger → X */
+    #nav-toggle:checked + label span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    #nav-toggle:checked + label span:nth-child(2) {
+      opacity: 0;
+    }
+    #nav-toggle:checked + label span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 antialiased">
+
+<!-- ========== HEADER ========== -->
+<header class="absolute top-0 left-0 w-full z-50 py-5">
+  <div class="max-w-container mx-auto px-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="text-white text-xl font-bold tracking-tight">Logo</a>
+
+    <!-- Checkbox (gizli) -->
+    <input type="checkbox" id="nav-toggle" class="peer hidden">
+
+    <!-- Hamburger button (yalnız mobile) -->
+    <label for="nav-toggle" class="md:hidden flex flex-col justify-between w-7 h-5 cursor-pointer z-50">
+      <span class="block h-0.5 w-full bg-white rounded transition-all duration-300"></span>
+      <span class="block h-0.5 w-full bg-white rounded transition-all duration-300"></span>
+      <span class="block h-0.5 w-full bg-white rounded transition-all duration-300"></span>
+    </label>
+
+    <!-- Navigation -->
+    <nav class="nav-menu absolute top-full left-0 w-full bg-primary-dark md:bg-transparent md:static md:flex md:items-center md:gap-8 md:max-h-none md:opacity-100 md:overflow-visible">
+      <ul class="flex flex-col md:flex-row md:items-center gap-5 md:gap-7 px-4 md:px-0">
+        <li><a href="#clinic" class="text-white font-medium text-[15px] hover:opacity-80 transition-opacity">The Clinic</a></li>
+        <li><a href="#services" class="text-white font-medium text-[15px] hover:opacity-80 transition-opacity">Services</a></li>
+        <li><a href="#blog" class="text-white font-medium text-[15px] hover:opacity-80 transition-opacity">Blog</a></li>
+        <li><a href="#contact" class="text-white font-medium text-[15px] hover:opacity-80 transition-opacity">Contact</a></li>
+      </ul>
+      <div class="px-4 md:px-0 mt-4 md:mt-0">
+        <a href="#contact" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-primary rounded-full border-2 border-primary hover:bg-primary-dark hover:border-primary-dark transition-colors w-full md:w-auto">
+          Book Online
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="relative min-h-screen flex items-center bg-cover bg-center text-white pt-28 pb-16 md:pt-32 md:pb-20"
+         style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.jpg');">
+  <div class="max-w-container mx-auto px-4 w-full">
+    <div class="max-w-xl">
+      <h1 class="font-bold leading-tight mb-5 text-[clamp(28px,4vw+1rem,52px)]">
+        Have a shining smile with our modern methods
+      </h1>
+      <p class="text-base leading-relaxed opacity-90 mb-8 max-w-lg">
+        The health of your smile is our mission. We offer personalized treatments, cutting-edge technology, and a welcoming environment to make you feel safe. Book your appointment today and rediscover the joy of smiling.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center px-7 py-3 font-semibold rounded-full bg-primary text-white border-2 border-primary hover:bg-primary-dark hover:border-primary-dark transition-colors w-full sm:w-auto text-center">
+          Book Appointment
+        </a>
+        <a href="#services" class="inline-flex items-center justify-center px-7 py-3 font-semibold rounded-full bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary transition-colors w-full sm:w-auto text-center">
+          Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="py-10 md:py-20 bg-gray-50">
+  <div class="max-w-container mx-auto px-4">
+    <h2 class="text-[clamp(28px,3vw+0.5rem,36px)] font-bold text-gray-900 mb-10">Services</h2>
+
+    <!-- auto-fit + minmax(260px) → media query olmadan sütun sayı dəyişir -->
+    <div class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+      <!-- Card 1 -->
+      <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+        <div class="w-12 h-12 mb-5">
+          <img src="images/service-cleaning.svg" alt="Dental Cleaning" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Dental Cleaning</h3>
+        <p class="text-sm text-gray-500 flex-grow mb-4">Removes plaque and tartar to prevent cavities and gum disease, maintaining a healthy and bright smile.</p>
+        <a href="#" class="text-primary text-xl self-start">→</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+        <div class="w-12 h-12 mb-5">
+          <img src="images/service-whitening.svg" alt="Teeth Whitening" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Teeth Whitening</h3>
+        <p class="text-sm text-gray-500 flex-grow mb-4">Aesthetic treatment that lightens teeth, removing stains and discoloration for a brighter smile.</p>
+        <a href="#" class="text-primary text-xl self-start">→</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+        <div class="w-12 h-12 mb-5">
+          <img src="images/service-cavity.svg" alt="Cavity Repair" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Cavity Repair</h3>
+        <p class="text-sm text-gray-500 flex-grow mb-4">Restoration of teeth damaged by cavities with aesthetic materials that blend perfectly with the natural tooth color.</p>
+        <a href="#" class="text-primary text-xl self-start">→</a>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+        <div class="w-12 h-12 mb-5">
+          <img src="images/service-alignment.svg" alt="Dental Alignment" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Dental Alignment</h3>
+        <p class="text-sm text-gray-500 flex-grow mb-4">Correction of misalignments and malocclusions with orthodontic appliances, enhancing the aesthetics and functionality of the smile.</p>
+        <a href="#" class="text-primary text-xl self-start">→</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEET THE TEAM ========== -->
+<section id="clinic" class="py-10 md:py-20">
+  <div class="max-w-container mx-auto px-4">
+    <h2 class="text-[clamp(28px,3vw+0.5rem,36px)] font-bold text-gray-900 mb-3">Meet the Team</h2>
+    <p class="text-gray-600 max-w-xl mb-10">These professionals, ready to guide you with expertise, empathy, and care on your dental journey. Discover who will take care of your smile.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Team 1 -->
+      <article class="text-center">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-gray-200 mb-4">
+          <img src="images/team-1.jpg" alt="Dr. Name Surname" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-semibold text-gray-900">Dr. Name Surname</h3>
+        <p class="text-sm text-gray-500">Dental Surgeon</p>
+      </article>
+      <!-- Team 2 -->
+      <article class="text-center">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-gray-200 mb-4">
+          <img src="images/team-2.jpg" alt="Dr. Name Surname" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-semibold text-gray-900">Dr. Name Surname</h3>
+        <p class="text-sm text-gray-500">Orthodontist</p>
+      </article>
+      <!-- Team 3 -->
+      <article class="text-center">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-gray-200 mb-4">
+          <img src="images/team-3.jpg" alt="Dr. Name Surname" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-semibold text-gray-900">Dr. Name Surname</h3>
+        <p class="text-sm text-gray-500">Pediatric Dentist</p>
+      </article>
+      <!-- Team 4 -->
+      <article class="text-center">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-gray-200 mb-4">
+          <img src="images/team-4.jpg" alt="Dr. Name Surname" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-semibold text-gray-900">Dr. Name Surname</h3>
+        <p class="text-sm text-gray-500">Implantologist</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COME AND VISIT ========== -->
+<section class="py-10 md:py-20 bg-gray-50">
+  <div class="max-w-container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <h2 class="text-[clamp(28px,3vw+0.5rem,36px)] font-bold text-gray-900 mb-4">Come and visit us in the Clinic</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Our studio is designed to offer you the utmost comfort: relaxing environments, modern technology, and a welcome that makes you feel at home. We look forward to meeting you in person!
+        </p>
+      </div>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+        <img src="images/clinic.jpg" alt="Our dental clinic" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT + MAP ========== -->
+<section id="contact" class="py-10 md:py-20 bg-primary-dark text-white">
+  <div class="max-w-container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <!-- Form -->
+      <div>
+        <h2 class="text-[clamp(28px,3vw+0.5rem,36px)] font-bold mb-3">You Can Find Us Here</h2>
+        <p class="opacity-90 mb-7">Write to us to answer all your questions and schedule your next visit. Call us, or drop by – your new smile starts here.</p>
+
+        <form class="flex flex-col gap-4" action="#" method="post">
+          <input type="text" name="name" placeholder="Your name" required
+                 class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 outline-none focus:border-white focus:bg-white/15 transition">
+          <input type="email" name="email" placeholder="Your email" required
+                 class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 outline-none focus:border-white focus:bg-white/15 transition">
+          <textarea name="message" rows="5" placeholder="Your message" required
+                    class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 outline-none focus:border-white focus:bg-white/15 transition resize-none"></textarea>
+          <button type="submit"
+                  class="inline-flex items-center justify-center px-7 py-3 font-semibold rounded-full bg-primary text-white border-2 border-primary hover:bg-teal-700 hover:border-teal-700 transition-colors w-full sm:w-auto">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Map -->
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+        <img src="images/map.jpg" alt="Clinic location map" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="py-10 md:py-20 bg-gray-50">
+  <div class="max-w-container mx-auto px-4">
+    <h2 class="text-[clamp(28px,3vw+0.5rem,36px)] font-bold text-gray-900 mb-10">Customer testimonials</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white rounded-2xl p-6 shadow-sm">
+        <div class="text-amber-500 text-lg mb-3">★★★★★</div>
+        <p class="text-sm text-gray-600 mb-4">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+        <p class="text-sm font-semibold text-gray-900">— Happy Patient</p>
+      </article>
+      <article class="bg-white rounded-2xl p-6 shadow-sm">
+        <div class="text-amber-500 text-lg mb-3">★★★★★</div>
+        <p class="text-sm text-gray-600 mb-4">“Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
+        <p class="text-sm font-semibold text-gray-900">— Satisfied Client</p>
+      </article>
+      <article class="bg-white rounded-2xl p-6 shadow-sm">
+        <div class="text-amber-500 text-lg mb-3">★★★★★</div>
+        <p class="text-sm text-gray-600 mb-4">“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”</p>
+        <p class="text-sm font-semibold text-gray-900">— Great Experience</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-gray-900 text-gray-300 pt-14 pb-0">
+  <div class="max-w-container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Col 1 -->
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-5 leading-snug">Have a shining smile with our modern methods</h3>
+        <form class="flex flex-col sm:flex-row gap-2">
+          <input type="email" placeholder="Your email" required
+                 class="flex-1 px-4 py-2.5 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 outline-none focus:border-primary">
+          <button type="submit" class="px-5 py-2.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <!-- Col 2 -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Column One</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#" class="hover:text-primary transition-colors">Link One</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Two</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Three</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Four</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Five</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Column Two</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#" class="hover:text-primary transition-colors">Link Six</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Seven</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Eight</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Nine</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Link Ten</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">X</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-800 py-5">
+    <div class="max-w-container mx-auto px-4 text-sm text-gray-500">
+      © 2024 All rights reserved
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
